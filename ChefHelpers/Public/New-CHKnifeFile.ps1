@@ -1,17 +1,17 @@
-﻿Function Create-KnifeFile{
+﻿Function New-CHKnifeFile{
     param(
         [Parameter(Mandatory)]
-        $OrganisationName,
+        [string]$OrganisationName,
         [Parameter(Mandatory)]
-        $Username,
-        [Parameter(Mandatory)]
-        $Cookbookpath = "#{current_dir}/cookbooks",
-        [Parameter(Mandatory)]
-        $ChefServerUri = "https://api.chef.io",
-        [Parameter(Mandatory)]
-        $KnifeFileName = 'knife.rb'
+        [string]$Username,
+        [string[]]$Cookbookpath = "#{current_dir}/cookbooks",
+        [string]$ChefServerUri = "https://api.chef.io",
+        [string]$KnifeFileName = 'knife.rb'
     )
 
+    if(!$ClientKey){
+        $ClientKey = "#{current_dir}/$username.pem"
+    }
 
     Write-Verbose "Writing knife file to $KnifeFileName"
     @"
