@@ -21,7 +21,7 @@ current_dir = File.dirname(__FILE__)
 log_level                :info
 log_location             STDOUT
 node_name                "$Username"
-client_key               "#{current_dir}/$ClientKey"
+client_key               "$ClientKey"
 chef_server_url          "$ChefServerUri/organizations/$OrganisationName"
 cookbook_path            ["$($Cookbookpath -join '","')"]
 "@ | Set-Content $KnifeFileName
