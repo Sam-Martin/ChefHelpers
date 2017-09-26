@@ -1,6 +1,5 @@
 ﻿Function Get-CHEncryptedDatabag{
     param(
-        [parameter(Mandatory)]
         $knifeRb = ".\knife.rb",
         [parameter(Mandatory)]
         $SecretFile, 
