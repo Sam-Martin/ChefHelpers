@@ -8,6 +8,6 @@
         [parameter(Mandatory)]
         $DatabagItemName
     )
-    knife data bag show "$DatabagName" "$DatabagItemName" -c $knifeRB --secret-file $SecretFile -F json
-    $DatabagItem  -replace '^\w*[^"{}\[\]]+' | Convertfrom-Json
+    $databagItemJson = knife data bag show "$DatabagName" "$DatabagItemName" -c $knifeRB --secret-file $SecretFile -F json
+    return $databagItemJson  -replace '^\w*[^"{}\[\]]+' | Convertfrom-Json
 }
